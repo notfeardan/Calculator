@@ -46,9 +46,61 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #88cc88;
+  background: #acacac;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #55aa55;
+  background: #6d6d6d;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+button {
+  min-height: 50px;
+  font-size: 20px;
+  font-weight: 100;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #cccccc;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus {
+  outline: none;
+}
+
+.operator {
+  background: #999999;
+  color: white;
+  font-size: 30px;
+}
+
+.clear {
+  background: #d46a6a;
+  color: white;
+}
+
+.equal-sign {
+  grid-column: -2;
+  grid-row: 2 / span 4;
+  background: #88cc88;
+}
+
+@media screen and (max-width: 600px) {
+  .calculator {
+    width: 95%;
+  }
 }
