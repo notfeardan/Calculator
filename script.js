@@ -23,3 +23,9 @@ inputBtns.forEach((inputBtn) => {
     });
   }
 });
+
+function restAll() {
+  caculatorDisplay.textContent = "0";
+}
+
+clearBtn.addEventListener("click", restAll);
