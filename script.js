@@ -18,17 +18,32 @@ function sendNumberValue(number) {
 }
 
 function addDecimal() {
-  if (awaitingNextValue) return;
+  if (awaitingNextValue) {
+    operatorValue = operator;
+    return;
+  }
   if (!caculatorDisplay.textContent.includes(".")) {
     caculatorDisplay.textContent = `${caculatorDisplay.textContent}.`;
   }
 }
 
+const calculate = {
+  "/": (firstNumber, secondNumber) => firstNumber / secondNumber,
+  "*": (firstNumber, secondNumber) => firstNumber * secondNumber,
+  "-": (firstNumber, secondNumber) => firstNumber - secondNumber,
+  "+": (firstNumber, secondNumber) => firstNumber + secondNumber,
+  "=": (firstNumber, secondNumber) => secondNumber,
+};
+
 function useOperator(operator) {
   const currentValue = Number(caculatorDisplay.textContent);
+  if (operatorValue && awaitingNextValue) return;
   if (!firstValue) {
     firstValue = currentValue;
   } else {
+    const calculation = calculate[operatorValue](firstValue, currentValue);
+    caculatorDisplay.textContent = calculation;
+    firstValue = calculation;
   }
   awaitingNextValue = true;
   operatorValue = operator;
