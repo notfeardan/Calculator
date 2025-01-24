@@ -8,6 +8,12 @@ function sendNumberValue(number) {
     displayValue === "0" ? number : displayValue + number;
 }
 
+function addDecimal() {
+  if (!caculatorDisplay.textContent.includes(".")) {
+    caculatorDisplay.textContent = `${caculatorDisplay.textContent}.`;
+  }
+}
+
 inputBtns.forEach((inputBtn) => {
   if (inputBtn.classList.length === 0) {
     inputBtn.addEventListener("click", () => {
@@ -19,7 +25,7 @@ inputBtns.forEach((inputBtn) => {
     });
   } else if (inputBtn.classList.contains("decimal")) {
     inputBtn.addEventListener("click", () => {
-      sendNumberValue(inputBtn.value);
+      addDecimal();
     });
   }
 });
