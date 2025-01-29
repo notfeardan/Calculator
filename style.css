@@ -6,9 +6,16 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .calculator {
@@ -35,22 +42,6 @@ body {
   font-family: "Lucida Grande", sans-serif;
   font-weight: 100;
   overflow-x: auto;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #acacac;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6d6d6d;
 }
 
 .calculator-buttons {
@@ -97,6 +88,46 @@ button:focus {
   grid-column: -2;
   grid-row: 2 / span 4;
   background: #88cc88;
+}
+
+.social-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.made-by {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.social-btn {
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.github {
+  background: #24292e;
+}
+
+.github:hover {
+  background: #444c56;
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.linkedin:hover {
+  background: #005582;
 }
 
 @media screen and (max-width: 600px) {
